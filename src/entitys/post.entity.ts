@@ -12,6 +12,8 @@ export class Post{
     header: string
     @Column({nullable: false, length:5000})
     body: string
+    @Column({type: "bigint", nullable: false, default: Date.now()})
+    createdTime: Date
     @ManyToOne(()=> Post, (posts) => posts.user)
     user: User
 

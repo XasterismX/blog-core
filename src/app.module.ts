@@ -5,13 +5,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Post } from './entitys/post.entity';
 import { Comment } from './entitys/coment.entity';
 import { User } from './entitys/user.entity';
-import { UserController } from './user/user.controller';
-import { UserService } from './user/user.service';
 import { UserModule } from './user/user.module';
-import { AuthService } from './auth/auth.service';
-import { AuthController } from './auth/auth.controller';
-import { AuthModule } from './auth/auth.module';
 import { PostModule } from './post/post.module';
+import { CommentModule } from './comment/comment.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -27,12 +24,12 @@ import { PostModule } from './post/post.module';
 
     }),
     UserModule,
-    AuthModule,
     PostModule,
-    
+    CommentModule,
+    AuthModule,
   ],
-  controllers: [AppController, AuthController],
-  providers: [AppService, AuthService],
+  controllers: [AppController],
+  providers: [AppService],
   exports:[]
 })
 export class AppModule {}

@@ -4,7 +4,7 @@ import { Post } from "./post.entity";
 @Entity()
 export class User{
     @PrimaryGeneratedColumn()
-    id: string
+    id: number
     @Column({nullable: false,unique: true})
     username: string
     @Column({unique: true, nullable:false})
